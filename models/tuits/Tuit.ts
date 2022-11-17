@@ -3,13 +3,14 @@
  */
 
 import User from "../users/User";
-
+import Stats from "./Stats";
 /**
  * @typedef Tuit Represents a tuit
  * @property {string} id The id of a tuit
  * @property {string} tuit The content of a tuit
  * @property {Date} postedOn Date the tuit was posted on
  * @property {User} postedBy User that the tuit was posted by
+ * @property {Stats} stats Stats of the tuit
  */
 
 export default interface Tuit {
@@ -17,6 +18,7 @@ export default interface Tuit {
     tuit: string,
     postedBy: User,
     postedOn?: Date,
+    stats: Stats
 }
 
 
