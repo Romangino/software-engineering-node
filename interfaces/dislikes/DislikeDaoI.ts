@@ -1,5 +1,5 @@
 /**
- * @file Declares API for Likes related data access object methods
+ * @file Declares API for Dislikes related data access object methods
  */
 import Dislike from "../../models/dislikes/Dislike";
 
