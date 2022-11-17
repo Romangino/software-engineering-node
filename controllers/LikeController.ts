@@ -38,17 +38,11 @@ export default class LikeController implements LikeControllerI {
         if (LikeController.likeController === null) {
             LikeController.likeController = new LikeController();
 
-            app.get("/api/users/:uid/likes",
-                LikeController.likeController.findAllTuitsLikedByUser);
+            app.get("/api/users/:uid/likes", LikeController.likeController.findAllTuitsLikedByUser);
 
-            app.get("/api/tuits/:tid/likes",
-                LikeController.likeController.findAllUsersThatLikedTuit);
+            app.get("/api/tuits/:tid/likes", LikeController.likeController.findAllUsersThatLikedTuit);
 
-            app.put("/api/users/:uid/likes/:tid",
-                LikeController.likeController.userTogglesTuitLikes);
-
-            // app.post("/api/users/:uid/likes/:tid", LikeController.likeController.userLikesTuit);
-            // app.delete("/api/users/:uid/unlikes/:tid", LikeController.likeController.userUnlikesTuit);
+            app.put("/api/users/:uid/likes/:tid", LikeController.likeController.userTogglesTuitLikes);
         }
         return LikeController.likeController;
     }
@@ -86,9 +80,9 @@ export default class LikeController implements LikeControllerI {
      * body formatted as JSON containing the new likes that was inserted in the
      * database
      */
-    // userLikesTuit = (req: Request, res: Response) =>
-    //     LikeController.likeDao.userLikesTuit(req.params.uid, req.params.tid)
-    //         .then(likes => res.json(likes));
+    userLikesTuit = (req: Request, res: Response) =>
+        LikeController.likeDao.userLikesTuit(req.params.uid, req.params.tid)
+            .then(likes => res.json(likes));
 
     /**
      * @param {Request} req Represents request from client, including the
