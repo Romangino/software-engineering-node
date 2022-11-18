@@ -138,7 +138,7 @@ export default class LikeController implements LikeControllerI {
                 if (userAlreadyDislikedTuit) {
                     // If user has remove dislike and decrease dislike count by 1
                     await dislikeDao.userUnDislikesTuit(userId, tid)
-                    tuit.stats.likes = howManyDislikedTuit - 1
+                    tuit.stats.dislikes = howManyDislikedTuit - 1
                 }
                 // User likes tuit and like count increased by 1
                 await likeDao.userLikesTuit(userId, tid);
