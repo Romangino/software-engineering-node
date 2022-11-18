@@ -95,7 +95,7 @@ export default class TuitDao implements TuitDaoI {
      * @param {string} tid Primary key of tuit
      * @param {Stats} newStats new stats for the tuit
      */
-    updateLikes = async (tid: string, newStats: Stats) =>
+    updateStats = async (tid: string, newStats: Stats) =>
         TuitModel.updateOne(
             {_id: tid},
             {$set: {stats: newStats}}
