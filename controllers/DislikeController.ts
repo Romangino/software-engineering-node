@@ -35,8 +35,10 @@ export default class DislikeController implements DislikeControllerI {
         if (DislikeController.dislikeController === null) {
             DislikeController.dislikeController = new DislikeController();
 
-            app.get("/api/users/:uid/dislikes",);
-            app.put("/api/users/:uid/dislikes/:tid", );
+            app.get("/api/users/:uid/dislikes",
+                DislikeController.dislikeController.findAllTuitsDislikedByUser);
+            app.put("/api/users/:uid/dislikes/:tid",
+                DislikeController.dislikeController.userTogglesTuitDislikes);
         }
         return DislikeController.dislikeController;
     }
