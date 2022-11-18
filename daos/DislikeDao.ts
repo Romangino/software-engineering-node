@@ -64,7 +64,7 @@ export default class DislikeDao implements DislikeDaoI {
      * @param {string} tid Primary key of tuit
      * @returns Promise To be notified when dislike is inserted into the database
      */
-    userDislikesTuit = async (tid: string, uid: string): Promise<Dislike> =>
+    userDislikesTuit = async (uid: string, tid: string): Promise<Dislike> =>
         DislikeModel.create({tuit: tid, dislikedBy: uid})
 
     /**
@@ -73,7 +73,7 @@ export default class DislikeDao implements DislikeDaoI {
      * @param {string} tid Primary key of tuit
      * @returns Promise To be notified when dislike is removed from the database
      */
-    userUnDislikesTuit = async (tid: string, uid: string): Promise<any> =>
+    userUnDislikesTuit = async (uid: string, tid: string): Promise<any> =>
         DislikeModel.deleteOne({tuit: tid, dislikedBy: uid})
 
 
